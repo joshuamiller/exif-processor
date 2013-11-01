@@ -1,7 +1,7 @@
 (ns exif-processor.core
   (:use [clojure.string :only [join]])
   (:require [clj-http.client :as client])
-  (:import [java.io BufferedInputStream]
+  (:import [java.io BufferedInputStream FileInputStream]
            [com.drew.imaging ImageMetadataReader]))
 
 (def exif-directory-regex
@@ -24,6 +24,11 @@
         exif-directories (filter #(re-find exif-directory-regex (.getName %)) (.getDirectories metadata))
         tags (map #(.getTags %) exif-directories)]
     (into {} (map extract-from-tag tags))))
+
+(defn exif-for-filename
+  "Loads a file from a give filename and extracts exif information into a map"
+  [filename]
+  (exif-for-file (FileInputStream. filename)))
 
 (defn exif-for-url
   "Streams a file from a given URL and extracts exif information into a map"
