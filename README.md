@@ -14,6 +14,12 @@ $ cd metadata-extractor
 $ mvn install
 ```
 
+If you find that the build process from `mvn install` is failing because some of the tests are not passing, try this instead:
+
+```bash
+$ mvn -Dmaven.test.skip=true install
+```
+
 ## Usage
 
 ```clojure
