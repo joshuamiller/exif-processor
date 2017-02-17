@@ -1,5 +1,5 @@
 (defproject io.joshmiller/exif-processor "0.1.1"
-  :description "A lightweight Clojure wrapper around the exif processing facility in Drew Oakes' metadata-extractor"
+  :description "A lightweight Clojure wrapper around the exif processing facility in Drew Noakes' metadata-extractor"
   :url "http://github.com/joshuamiller/exif-processor"
   :min-lein-version "2.1.0"
   :license {:name "The MIT License"
