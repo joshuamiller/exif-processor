@@ -1,7 +1,7 @@
 # exif-processor
 
 A lightweight wrapper around the exif-processing functionality of 
-[metadata-extractor](http://code.google.com/p/metadata-extractor/).
+[metadata-extractor](https://github.com/drewnoakes/metadata-extractor).
 
 ## Installation
 
@@ -9,7 +9,7 @@ The 2.7.0 branch of metadata-extractor is required, as it fixes a bug
 in processing streams. To install it:
 
 ```bash
-$ git clone https://code.google.com/p/metadata-extractor/
+$ git clone https://github.com/drewnoakes/metadata-extractor.git
 $ cd metadata-extractor
 $ mvn install
 ```
