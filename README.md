@@ -7,7 +7,7 @@ A lightweight wrapper around the exif-processing functionality of
 
 In your `project.clj` or `build.boot`:
 
-[io.joshmiller/exif-processor "0.2.0"]
+`[io.joshmiller/exif-processor "0.2.0"]`
 
 ## Usage
 
