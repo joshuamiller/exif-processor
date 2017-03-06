@@ -6,4 +6,5 @@
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [com.drewnoakes/metadata-extractor "2.10.1"]
-                 [clj-http "3.4.1"]])
+                 [clj-http "3.4.1"]]
+  :profiles {:test {:resource-paths ["test-resources"]}})
