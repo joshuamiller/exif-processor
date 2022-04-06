@@ -10,7 +10,7 @@
                                  "Agfa" "Canon" "Casio" "Epson"
                                  "Fujifilm" "Kodak" "Kyocera"
                                  "Leica" "Minolta" "Nikon" "Olympus"
-                                 "Panasonic" "Pentax" "Sanyo"
+                                 "Panasonic" "Pentax" "QuickTime" "Sanyo"
                                  "Sigma/Foveon" "Sony"]) ")")))
 
 (defn- extract-from-tag

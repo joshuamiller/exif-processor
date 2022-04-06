@@ -15,5 +15,10 @@
 
 (deftest exif-for-url-test
   (testing "returns exif info from a URL"
-    (let [result (exif-for-url "https://pbs.twimg.com/media/C46dhdwVMAAaYMI.jpg")]
+    (let [result (exif-for-url "https://upload.wikimedia.org/wikipedia/commons/3/3d/Solmeta_Geotagger_N2_Kompass_GPS_on_Nikon_D300.jpg")]
       (is (= "Progressive, Huffman" (get result "Compression Type"))))))
+
+(deftest exif-for-url-mov
+  (testing "returns exif info from a QuickTime URL"
+    (let [result (exif-for-url "https://filesamples.com/samples/video/mov/sample_640x360.mov")]
+      (is (= "Fri Jan 01 01:00:00 +01:00 1904" (get result "Creation Time"))))))
