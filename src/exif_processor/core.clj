@@ -6,12 +6,13 @@
 
 (def exif-directory-regex
   (re-pattern (str "(?i)(" (join "|"
-                                ["Exif" "JPEG" "JFIF"
-                                 "Agfa" "Canon" "Casio" "Epson"
-                                 "Fujifilm" "Kodak" "Kyocera"
-                                 "Leica" "Minolta" "Nikon" "Olympus"
-                                 "Panasonic" "Pentax" "QuickTime" "Sanyo"
-                                 "Sigma/Foveon" "Sony"]) ")")))
+                                 ["Exif" "JPEG" "JFIF"
+                                  "GPS"
+                                  "Agfa" "Canon" "Casio" "Epson"
+                                  "Fujifilm" "Kodak" "Kyocera"
+                                  "Leica" "Minolta" "Nikon" "Olympus"
+                                  "Panasonic" "Pentax" "QuickTime" "Sanyo"
+                                  "Sigma/Foveon" "Sony"]) ")")))
 
 (defn- extract-from-tag
   [tag]

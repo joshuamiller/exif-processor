@@ -1,7 +1,8 @@
 (ns exif-processor.core-test
   (:require [exif-processor.core :refer :all]
             [clojure.test :refer :all]
-            [clojure.java.io :as io]))
+            [clojure.java.io :as io]
+            [clojure.string :as string]))
 
 (deftest exif-for-file-test
   (testing "returns exif info for file"
@@ -22,3 +23,9 @@
   (testing "returns exif info from a QuickTime URL"
     (let [result (exif-for-url "https://filesamples.com/samples/video/mov/sample_640x360.mov")]
       (is (= "Fri Jan 01 01:00:00 +01:00 1904" (get result "Creation Time"))))))
+
+(deftest exif-gps
+  (testing "returns GPS exif info for file"
+    (let [result (exif-for-file (io/file (io/resource "test-image-gps.jpg")))]
+      (is (some? (get result "GPS Latitude")))
+      (is (string/starts-with? (get result "GPS Latitude") "50")))))
